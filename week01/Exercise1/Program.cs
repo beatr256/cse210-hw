@@ -1,5 +1,7 @@
 using System;
+using System.Diagnostics;
 
+[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 class Program
 {
     static void Main(string[] args)
@@ -12,5 +14,10 @@ class Program
         string last = Console.ReadLine();
         
         Console.WriteLine($"Your name is {last}, {first} {last}.");
+    }
+
+    private string GetDebuggerDisplay()
+    {
+        return ToString();
     }
 }
