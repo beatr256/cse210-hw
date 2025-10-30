@@ -1,0 +1,14 @@
+The meaning of version control
+ Version control is a system that records and manages changes to files — most commonly source code — so you can track history, compare versions, and return to earlier states if needed. At its core it stores a sequence of snapshots (commits) and metadata (who changed what and when), and supports branching so multiple lines of work can proceed independently.
+The benefit of Version Control
+ collaboration safety: multiple developers can work on the same codebase without overwriting each other’s work. It also provides an auditable history (who introduced a change and why), enables reproducible rollbacks when bugs are found, and makes code review and continuous integration possible
+Example of version control and description
+ Example in a software team: when a developer implements a new feature, they create a feature branch (isolated workspace), make incremental commits as they code, then push the branch to the central repository and open a pull request.
+ eammates review the changes, run automated tests, request fixes if necessary, and after approval the branch is merged into main.
+Command used in version control and explanation 
+ From VS Code you can run this in the integrated terminal (View → Terminal) or use the Source Control view to create branches, stage changes, and commit. For example, in the terminal run:
+git add .
+git commit -m "Add login UI and validation"
+git push -u origin feature/login
+
+This demonstrates how version control supports incremental, reviewable, and reversible development in practical team workflows.
