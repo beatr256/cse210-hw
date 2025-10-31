@@ -23,7 +23,6 @@ class Program
     {
         Console.Write("Please enter your name: ");
         string name = Console.ReadLine();
-
         return name;
     }
 
@@ -31,14 +30,12 @@ class Program
     {
         Console.Write("Please enter your favorite number: ");
         int number = int.Parse(Console.ReadLine());
-
         return number;
     }
 
     static int SquareNumber(int number)
     {
-        int square = number * number;
-        return square;
+        return number * number;
     }
 
     static void DisplayResult(string name, int square)
