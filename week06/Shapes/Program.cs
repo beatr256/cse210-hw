@@ -1,22 +1,51 @@
 using System;
-using System.Collections.Generic;
+using EternalQuest;
 
 class Program
 {
-    static void Main()
+    // Exceeding Requirements:
+    // Added a gamification leveling system with titles:
+    // Seeker, Apprentice, Disciple, Master, Eternal Champion.
+    // Encourages the user with progression mechanics.
+
+    static void Main(string[] args)
     {
-        // List to hold shapes
-        List<Shape> shapes = new List<Shape>();
+        GoalManager manager = new GoalManager();
+        int choice = 0;
 
-        // Add different shapes
-        shapes.Add(new Square("Red", 5));
-        shapes.Add(new Rectangle("Blue", 4, 6));
-        shapes.Add(new Circle("Green", 3));
-
-        // Iterate through the list and display area and color
-        foreach (Shape shape in shapes)
+        while (choice != 6)
         {
-            Console.WriteLine($"Shape Color: {shape.GetColor()}, Area: {shape.GetArea():F2}");
+            manager.DisplayPlayerInfo();
+            Console.WriteLine("1. Create New Goal");
+            Console.WriteLine("2. List Goals");
+            Console.WriteLine("3. Save Goals");
+            Console.WriteLine("4. Load Goals");
+            Console.WriteLine("5. Record Event");
+            Console.WriteLine("6. Quit");
+            Console.Write("Choose: ");
+
+            if (int.TryParse(Console.ReadLine(), out choice))
+            {
+                switch (choice)
+                {
+                    case 1: manager.CreateGoal(); break;
+                    case 2: manager.ListGoalDetails(); break;
+                    case 3: manager.SaveGoals(); break;
+                    case 4: manager.LoadGoals(); break;
+                    case 5: manager.RecordEvent(); break;
+                    case 6:
+                        Console.WriteLine("Goodbye, adventurer!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice.\n");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please enter a number.\n");
+            }
         }
     }
 }
